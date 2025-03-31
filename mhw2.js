@@ -1,3 +1,23 @@
+/*
+Cose da aggiungere:
+- Modificare dinamicamente l’URL di un’immagine tramite l’attributo src;
+- Menu a tendina;
+*/
+
+// Header image
+function changeImage() {
+
+    //   image.src = 
+
+}
+
+
+
+const image = document.getElementById('header-image'); 
+image.addEventListener('click', changeImage);
+
+
+
 // Recent post swipe
 
 function swipeArticle() {
@@ -15,6 +35,7 @@ function swipeArticle() {
     nextButton.style.display = 'none';
     backButton.style.display = 'block'; 
     backButton.addEventListener('click', swipeBack);
+
 }
 
 function swipeBack() {    
@@ -41,10 +62,9 @@ const backButton = document.querySelector('[data-order="first"]');
 const nextButton = document.querySelector('[data-order="second"]');
 nextButton.addEventListener('click', swipeArticle);
 
-// Travel resourses show more: NOT WORKING
+// Travel resourses show more
 
 function showMoreFunction() {
-    console.log('click');
 
     const resources = document.querySelectorAll("#travel-resourses-container .t-r-grid-container .t-r-grid-item");
 
@@ -54,9 +74,69 @@ function showMoreFunction() {
             resource.style.display = 'grid';
         }
     }
-    showMoreButton.removeEventListener("click", showMoreFunction);
+    
     showMoreButton.style.display = 'none';
+    showLessButton.style.display = 'block';
 }
 
+function showLessFunction() {
+
+    const resources = document.querySelectorAll("#travel-resourses-container .t-r-grid-container .t-r-grid-item");
+
+    for (let i = 0; i < resources.length; i++) {
+        const resource = resources[i]; 
+        if (resource.dataset.type === 'mobile-hidden') {
+            resource.style.display = 'none';
+        }
+    }
+
+    showLessButton.style.display = 'none';
+    showMoreButton.style.display = 'block';
+    showMoreButton.scrollIntoView({ behavior: "smooth", block: "start" }); // Da chiedere (?)
+
+}
+
+const showLessButton = document.getElementById('show-less');
 const showMoreButton = document.getElementById('show-more');
+
 showMoreButton.addEventListener('click', showMoreFunction);
+showLessButton.addEventListener('click', showLessFunction);
+
+
+// Subscription part : 
+
+function thanksFunction(event) {
+    
+    event.preventDefault(); // Evita il comportamento predefinito del form 
+
+    const parent = document.getElementById('subscription-box');
+    const form = document.getElementById('subscription-form'); 
+
+    if (form) {
+        parent.removeChild(form);
+    }
+
+    if (!document.getElementById('thanks-message')) {
+        const text = document.createElement('h1');
+        text.textContent = "Thanks for subscribing!";
+        text.id = "thanks-message";
+        text.classList.add('follow-along');
+
+        const paragraph = document.createElement('p');
+        paragraph.textContent = "You will soon receive a verification email.";
+        paragraph.classList.add('follow-along');
+        parent.appendChild(text);
+        parent.appendChild(paragraph);
+    }
+}
+
+const subscriptionButton = document.querySelector('#subscription-form button');
+
+if (subscriptionButton)   
+    subscriptionButton.addEventListener('click', thanksFunction);
+
+
+
+
+
+

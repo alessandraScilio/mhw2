@@ -161,6 +161,7 @@ html, body {
     object-fit: cover;
     position: calc(15vh+85vh);
     margin-bottom: 1vh;
+    cursor: pointer;
 }
 
 #overlay-image {
@@ -477,6 +478,7 @@ html, body {
 
 .t-r-p {
     font-family: "Afacad", sans-serif;
+    text-align: center;
 }
 
 .t-r-g-button {
@@ -494,7 +496,7 @@ html, body {
     transform: scale(1.05);
 }
 
-#show-more {
+.show-buttons {
     display: none;
 }
 
@@ -519,7 +521,7 @@ html, body {
         display: none;
     }
     
-    #show-more {
+    .show-buttons {
         display: block;
         background-color: transparent; 
         color: var(--features-text); 
@@ -528,6 +530,14 @@ html, body {
         padding: 2vh 2vw;
         font-family: "Raleway", sans-serif; 
         width: 25vw;
+    }
+
+    #show-more {
+        display: block;
+    }
+
+    #show-less {
+        display: none;
     }
     
     #show-more:hover {
@@ -686,7 +696,6 @@ html, body {
         font-family: "Afacad", sans-serif;
         justify-self: center; 
     }
-
 }
 
 
@@ -703,7 +712,7 @@ footer {
     padding: 4vh 0;
 }
 
-#follow-along {
+.follow-along {
     color: rgba(42,47,141,255);
     text-align: center;
     margin-bottom: 6vh;
