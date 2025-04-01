@@ -5,18 +5,18 @@ Cose da aggiungere:
 */
 
 // Header image
-function changeImage() {
+/* function changeImage() {
 
     //   image.src = 
 
 }
+ */
 
 
-
-const image = document.getElementById('header-image'); 
+/* const image = document.getElementById('header-image'); 
 image.addEventListener('click', changeImage);
 
-
+ */
 
 // Recent post swipe
 
@@ -102,9 +102,26 @@ const showMoreButton = document.getElementById('show-more');
 showMoreButton.addEventListener('click', showMoreFunction);
 showLessButton.addEventListener('click', showLessFunction);
 
+// Recent post section : interactions
+
+
+
+function likeFunction(event) {
+    
+    const liked = event.target;
+    if (liked.src.includes("like.svg")) {
+        liked.src = "filled-heart.svg"; 
+    } else {
+        liked.src = "like.svg"; // Torna all'originale
+    }
+}
+
+const likeButtons = document.getElementsByClassName('like-image');
+for (i=0; i < likeButtons.length ; i++){
+    likeButtons[i].addEventListener('click', likeFunction);
+}
 
 // Subscription part : 
-
 function thanksFunction(event) {
     
     event.preventDefault(); // Evita il comportamento predefinito del form 

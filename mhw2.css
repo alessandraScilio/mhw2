@@ -641,8 +641,43 @@ html, body {
     display: none;
 }
 
-/*Carosello*/
+.interactions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: -2vh 0;
+}
 
+.actions-container {
+    display: flex;
+    gap: 10px; /* Distanza tra le icone */
+    align-items: center;
+}
+
+.action-icon {
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.action-icon img {
+    width: 2vw;
+    height: 4vh;
+}
+
+
+
+.action-icon:hover {
+    transform: scale(1.1);
+}
+
+.action-icon:active {
+    transform: scale(0.95);
+}
+
+/*Carosello*/
 
 .post-title {
     font-size: 5vh;
@@ -656,7 +691,6 @@ html, body {
     color:lightslategray;
     font-weight: 100s;
 }
-
 
 
 
@@ -695,6 +729,12 @@ html, body {
         cursor: pointer;
         font-family: "Afacad", sans-serif;
         justify-self: center; 
+    }
+    .action-icon img {
+        width: 5vw;  /* Aumenta leggermente la dimensione per schermi piccoli */
+        height: 5vh;
+        max-width: 30px; /* Limite massimo per evitare icone enormi */
+        max-height: 30px;
     }
 }
 
