@@ -1,24 +1,8 @@
 /*
 Cose da aggiungere:
-- Modificare dinamicamente l’URL di un’immagine tramite l’attributo src;
 - Menu a tendina;
 */
 
-// Header image
-/* function changeImage() {
-
-    //   image.src = 
-
-}
- */
-
-
-/* const image = document.getElementById('header-image'); 
-image.addEventListener('click', changeImage);
-
- */
-
-// Recent post swipe
 
 function swipeArticle() {
 
@@ -103,9 +87,6 @@ showMoreButton.addEventListener('click', showMoreFunction);
 showLessButton.addEventListener('click', showLessFunction);
 
 // Recent post section : interactions
-
-
-
 function likeFunction(event) {
     
     const liked = event.target;
