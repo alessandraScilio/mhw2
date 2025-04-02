@@ -13,6 +13,10 @@
     --features-text: "Afacad", sans-serif;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -72,9 +76,14 @@ html, body {
     padding: 1vw;
 }
 
-#curtain-menu   {
+#curtain-menu {
+    display:none;
+}
+
+#mobile-menu-container {
     display: none;
 }
+
 
 
 /*MOBILE NAV-BAR*/
@@ -91,7 +100,8 @@ html, body {
     }
 
     #site-name {
-        font-size: 4.5vh;
+        font-size: 3.5vh;
+        color: var(--text-color)
     }
 
     #menu-container {
@@ -103,9 +113,31 @@ html, body {
     }
     
     #curtain-menu {
-        display: block;
-        font-size: 4vh;
+        display: flex;
+        width: 2vw;
+        height: 4vh;
+        margin-right: 5vw;
     }
+
+    #mobile-menu-container {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(229,233,253,255) ;
+        width: 100vw;
+        height: 100vh;
+        gap: 5vh;
+        font-size: 4vh;
+        font-family: var(--features-text);
+        font-weight: 500;
+    }
+
+    #mobile-menu-container #social-icons-container {
+        display: block;
+        padding-top: 15vh;
+    }    
+
 }
 
 /*HEADER SECTION*/
@@ -666,7 +698,6 @@ html, body {
     width: 2vw;
     height: 4vh;
 }
-
 
 
 .action-icon:hover {

@@ -1,9 +1,43 @@
-/*
-Cose da aggiungere:
-- Menu a tendina;
-*/
+
+// Menu a tendina mobile:
+function showCurtainMenu(event) {
+  
+   const navbar = document.getElementById('nav-container');
+   navbar.style.background = "rgb(229,233,253,255)";
+   navbar.style.boxShadow = "none"; 
+   
+   curtainMenu.src = "cross.svg"; 
+   document.body.classList.add('no-scroll');
+   
+   const menuContainer = document.getElementById('mobile-menu-container');
+   menuContainer.style.display = "flex";
+
+   curtainMenu.removeEventListener('click', showCurtainMenu);
+   curtainMenu.addEventListener('click', removeCurtainMenu);
+}
+
+function removeCurtainMenu(){
+    
+    const navbar = document.getElementById('nav-container');
+    navbar.style.background = "rgba(148,171,249,255)";
+    navbar.style.boxShadow = "block"; 
+
+    curtainMenu.src = "curtain-menu-img.svg"; 
+    document.body.classList.remove('no-scroll');
+
+    const menuContainer = document.getElementById('mobile-menu-container');
+    menuContainer.style.display = "none";
+
+    curtainMenu.removeEventListener('click', removeCurtainMenu);
+    curtainMenu.addEventListener('click', showCurtainMenu);
+}
 
 
+const curtainMenu = document.getElementById('curtain-menu-image');
+curtainMenu.addEventListener('click', showCurtainMenu);
+
+
+// Recent post section swipe
 function swipeArticle() {
 
     const articles = document.querySelectorAll(".t-r-grid-item");
