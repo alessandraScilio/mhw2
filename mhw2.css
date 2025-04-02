@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+/* Migliorare: Carosello in recent post section mobile*/
+
 /*Definizioni*/
 :root {
     --bg-color: rgba(148,171,249,255);
@@ -95,8 +98,7 @@ html, body {
 
     #nav-container {
         justify-content: space-between;
-        padding: 3vh 4vw;
-        height: auto;
+        height: 7%;
     }
 
     #site-name {
@@ -128,7 +130,7 @@ html, body {
         width: 100vw;
         height: 100vh;
         gap: 5vh;
-        font-size: 4vh;
+        font-size: 4.5vh;
         font-family: var(--features-text);
         font-weight: 500;
     }
@@ -270,53 +272,43 @@ html, body {
     }
  
     #header-container {
-        justify-content: center;
-        align-items: flex-start;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
         height: 100vh;
         width: 100vw;
-        overflow-x: hidden;
-        padding-left: 4vw;
     }
 
    #header-title-container {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
         
+        margin-top: 7vh;
         background-image: url("travel-site-image.png") ;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         
-        height: 100vh;
-        width: 90vw;
-        position: relative; 
-        padding: 5vh 2vw;
+        height: 50%;
+        width: 100vw;
     }
 
-    #overlay-image {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
 
     #main-title {
         display: flex;
         justify-content: flex-end;
         z-index: 2;
-        font-size: 12vh;
+        font-size: 400%;
         font-weight: bold;
+        padding-right: 4vw;
     }
 
     #sub-title {
         z-index: 2;
-        font-size: 2em;
-        padding-top: 15%;
-        margin-left: 5vw;
+        padding-right: 4vw;
+        font-size: 200%;
+        padding-top: 20%;
     }
 
     #main-paragraph {
@@ -339,34 +331,34 @@ html, body {
 
     #hi-section {
         display: flex;
-        font-size: 5vh;
-        padding-top: 20%;
+        font-size: 4vh;
+        margin-top: 4%;
     }
+
 
     #paragraph {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        font-size: 4vh;
-        padding-top: 20%;
+        font-size: 3vh;
     }
 
     #paragraph-end {
         display: flex;
-        font-size: 3vh;
-        padding: 3% 0%;
-
+        font-size: 2.5vh;
     }
 
     #button-container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
-
-        width: 85vw;
-        gap: 2vh;
+        justify-content: flex-start;
         text-align: center;
+        font-size: 2.5vh;
+        font-weight: 100;
+        margin-top: -4vh;
+    }
+
+    .button {
+        padding: 3% 10%;
     }
 
     .button:active {
@@ -421,14 +413,14 @@ html, body {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        
         background-color: var(--text-color);
-        margin-top: 10vh;
-        height: 50vh;
+        height: 40vh;
         font-size: 3vh;
         font-weight: bold;
         padding-bottom: 5vh;
         flex-shrink: 1;
-
+        margin-top: 10%;
     }
 
     #features-text {
@@ -495,7 +487,7 @@ html, body {
     font-size: 1.5vw;
     font-weight: bold;
     text-decoration: underline wavy;
-    text-decoration-color: rgba(245,152,255,255) ;
+    text-decoration-color: rgba(245,152,255,255);
     cursor: pointer;
     font-family: "Raleway", sans-serif; 
 }
@@ -729,11 +721,10 @@ html, body {
 @media (max-width: 500px) {
 
     #general-bar {
-        display: none;
+        display: flex;
     }
 
     #Recent-post-section {
-        margin: 3vh 2vw;
         max-width: 90vw;
         align-items: flex-start;
     }
@@ -768,7 +759,6 @@ html, body {
         max-height: 30px;
     }
 }
-
 
 
 /*FOOTER SECTION*/

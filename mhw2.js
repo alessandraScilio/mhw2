@@ -1,3 +1,7 @@
+// Cose da migliorare:
+// Carosello in recent post section mobile
+
+
 
 // Menu a tendina mobile:
 function showCurtainMenu(event) {
@@ -39,6 +43,10 @@ curtainMenu.addEventListener('click', showCurtainMenu);
 
 // Recent post section swipe
 function swipeArticle() {
+
+    if (window.innerWidth <= 768) { 
+        console.log("Funzione eseguita su mobile!");
+    }
 
     const articles = document.querySelectorAll(".t-r-grid-item");
     for (let i=0; i < articles.length; i++){
